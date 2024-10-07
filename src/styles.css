@@ -1,0 +1,22 @@
+body {
+  background-image: url("https://thumbs.dreamstime.com/z/blank-islamic-background-mosque-design-92752630.jpg"); /* Replace with an appropriate background image URL */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: Arial, sans-serif;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+h1 {
+  font-size: 1.5rem;
+}
