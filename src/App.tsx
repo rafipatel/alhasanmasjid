@@ -41,11 +41,15 @@ const AlHasanMasjid = () => {
     }
   };
 
-  // Handle announcement change
-  const handleAnnouncementChange = (newAnnouncement) => {
+  const handleAnnouncementChange = (newAnnouncement: string) => {
     setAnnouncement(newAnnouncement);
     setChangesMade(true);
   };
+  // Handle announcement change
+  // const handleAnnouncementChange = (newAnnouncement) => {
+  //   setAnnouncement(newAnnouncement);
+  //   setChangesMade(true);
+  // };
 
   // Save changes for announcement
   const saveAnnouncementChanges = async () => {
