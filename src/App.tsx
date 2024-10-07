@@ -61,15 +61,15 @@ const AlHasanMasjid = () => {
       console.error("Error updating announcement: ", error);
     }
   };
-  const updatePrayerTime = async (id: string, newTime: string | number) => {
-  const prayerDoc = doc(db, "prayers", id);
-  try {
-    await updateDoc(prayerDoc, { time: newTime });
-    // ...
-  } catch (error) {
-    // ...
-  }
-};
+//   const updatePrayerTime = async (id: string, newTime: string | number) => {
+//   const prayerDoc = doc(db, "prayers", id);
+//   try {
+//     await updateDoc(prayerDoc, { time: newTime });
+//     // ...
+//   } catch (error) {
+//     // ...
+//   }
+// };
   // // Update prayer time
   // const updatePrayerTime = async (id, newTime) => {
   //   const prayerDoc = doc(db, "prayers", id);
