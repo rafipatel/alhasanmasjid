@@ -9,10 +9,14 @@ import {
   getDoc,
 } from "firebase/firestore";
 
-
+// Define the Prayer type
+interface Prayer {
+  id: string;
+  time: string | number; // Define the appropriate type for 'time'
+}
 
 const AlHasanMasjid = () => {
-  const [prayers, setPrayers] = useState<{ id: string; }[]>([]);
+  const [prayers, setPrayers] = useState<Prayer[]>([]);
   const [activeTab, setActiveTab] = useState("prayer-times");
   const [isAdmin, setIsAdmin] = useState(false);
   const [password, setPassword] = useState("");
@@ -21,31 +25,17 @@ const AlHasanMasjid = () => {
   const [changesMade, setChangesMade] = useState(false);
   const [showSaveMessage, setShowSaveMessage] = useState(false);
 
-  // // Fetch prayers from Firestore
-  // const fetchPrayers = async () => {
-  //   const prayersCollection = collection(db, "prayers");
-  //   const prayersSnapshot = await getDocs(prayersCollection);
-  //   const prayersList = prayersSnapshot.docs.map((doc) => ({
-  //     id: doc.id,
-  //     time: doc.data().time, // add this line
-  //     ...doc.data(),
-  //   }));
-  //   setPrayers(prayersList);
-  // };
-
-
-    // Fetch prayers from Firestore
+  // Fetch prayers from Firestore
   const fetchPrayers = async () => {
     const prayersCollection = collection(db, "prayers");
     const prayersSnapshot = await getDocs(prayersCollection);
     const prayersList = prayersSnapshot.docs.map((doc) => ({
       id: doc.id,
-      time: doc.data().time, // add this line
+      time: doc.data().time, // Assuming 'time' exists in Firestore documents
       ...doc.data(),
     }));
     setPrayers(prayersList);
   };
-
 
   // Fetch announcement from Firestore
   const fetchAnnouncement = async () => {
@@ -62,11 +52,6 @@ const AlHasanMasjid = () => {
     setAnnouncement(newAnnouncement);
     setChangesMade(true);
   };
-  // Handle announcement change
-  // const handleAnnouncementChange = (newAnnouncement) => {
-  //   setAnnouncement(newAnnouncement);
-  //   setChangesMade(true);
-  // };
 
   // Save changes for announcement
   const saveAnnouncementChanges = async () => {
@@ -78,16 +63,8 @@ const AlHasanMasjid = () => {
       console.error("Error updating announcement: ", error);
     }
   };
-//   const updatePrayerTime = async (id: string, newTime: string | number) => {
-//   const prayerDoc = doc(db, "prayers", id);
-//   try {
-//     await updateDoc(prayerDoc, { time: newTime });
-//     // ...
-//   } catch (error) {
-//     // ...
-//   }
-// };
- const updatePrayerTime = async (id: string, newTime?: string | number) => {
+
+  const updatePrayerTime = async (id: string, newTime?: string | number) => {
     const prayerDoc = doc(db, "prayers", id);
     try {
       if (newTime !== undefined) {
@@ -101,9 +78,6 @@ const AlHasanMasjid = () => {
       console.error("Error updating prayer time: ", error);
     }
   };
-
-
-
 
   // Save all prayer time changes
   const savePrayerChanges = async () => {
@@ -126,7 +100,7 @@ const AlHasanMasjid = () => {
   }, []);
 
   useEffect(() => {
-    const handleBeforeUnload = (event) => {
+    const handleBeforeUnload = (event: BeforeUnloadEvent) => {
       if (changesMade) {
         event.preventDefault();
         event.returnValue = "";
