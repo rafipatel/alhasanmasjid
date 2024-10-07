@@ -9,6 +9,8 @@ import {
   getDoc,
 } from "firebase/firestore";
 
+
+
 const AlHasanMasjid = () => {
   const [prayers, setPrayers] = useState<{ id: string; }[]>([]);
   const [activeTab, setActiveTab] = useState("prayer-times");
@@ -25,10 +27,12 @@ const AlHasanMasjid = () => {
     const prayersSnapshot = await getDocs(prayersCollection);
     const prayersList = prayersSnapshot.docs.map((doc) => ({
       id: doc.id,
+      time: doc.data().time, // add this line
       ...doc.data(),
     }));
     setPrayers(prayersList);
   };
+
 
   // Fetch announcement from Firestore
   const fetchAnnouncement = async () => {
@@ -71,6 +75,21 @@ const AlHasanMasjid = () => {
 //   }
 // };
  const updatePrayerTime = async (id: string, newTime?: string | number) => {
+    const prayerDoc = doc(db, "prayers", id);
+    try {
+      if (newTime !== undefined) {
+        await updateDoc(prayerDoc, { time: newTime });
+        console.log("Prayer time updated successfully.");
+      } else {
+        console.log("No time provided for prayer with id:", id);
+      }
+      setChangesMade(true);
+    } catch (error) {
+      console.error("Error updating prayer time: ", error);
+    }
+  };
+
+  const updatePrayerTime = async (id: string, newTime?: string | number) => {
     const prayerDoc = doc(db, "prayers", id);
     try {
       if (newTime !== undefined) {
