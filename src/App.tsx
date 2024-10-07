@@ -61,9 +61,29 @@ const AlHasanMasjid = () => {
       console.error("Error updating announcement: ", error);
     }
   };
+  const updatePrayerTime = async (id: string, newTime: string | number) => {
+  const prayerDoc = doc(db, "prayers", id);
+  try {
+    await updateDoc(prayerDoc, { time: newTime });
+    // ...
+  } catch (error) {
+    // ...
+  }
+};
+  // // Update prayer time
+  // const updatePrayerTime = async (id, newTime) => {
+  //   const prayerDoc = doc(db, "prayers", id);
+  //   try {
+  //     await updateDoc(prayerDoc, { time: newTime });
+  //     console.log("Prayer time updated successfully.");
+  //     setChangesMade(true);
+  //   } catch (error) {
+  //     console.error("Error updating prayer time: ", error);
+  //   }
+  // };
 
   // Update prayer time
-  const updatePrayerTime = async (id, newTime) => {
+  const updatePrayerTime = async (id: string, newTime: string | number) => {
     const prayerDoc = doc(db, "prayers", id);
     try {
       await updateDoc(prayerDoc, { time: newTime });
@@ -72,7 +92,8 @@ const AlHasanMasjid = () => {
     } catch (error) {
       console.error("Error updating prayer time: ", error);
     }
-  };
+    };
+
 
   // Save all prayer time changes
   const savePrayerChanges = async () => {
