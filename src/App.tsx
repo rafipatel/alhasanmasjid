@@ -89,20 +89,7 @@ const AlHasanMasjid = () => {
     }
   };
 
-  const updatePrayerTime = async (id: string, newTime?: string | number) => {
-    const prayerDoc = doc(db, "prayers", id);
-    try {
-      if (newTime !== undefined) {
-        await updateDoc(prayerDoc, { time: newTime });
-        console.log("Prayer time updated successfully.");
-      } else {
-        console.log("No time provided for prayer with id:", id);
-      }
-      setChangesMade(true);
-    } catch (error) {
-      console.error("Error updating prayer time: ", error);
-    }
-  };
+
 
 
   // Save all prayer time changes
