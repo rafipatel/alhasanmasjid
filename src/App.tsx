@@ -12,8 +12,10 @@ import {
 // Define the Prayer type
 interface Prayer {
   id: string;
-  time: string | number; // Define the appropriate type for 'time'
+  time: string | number;
+  name: string; // Add this line if 'name' exists in your Firestore documents
 }
+
 
 const AlHasanMasjid = () => {
   const [prayers, setPrayers] = useState<Prayer[]>([]);
@@ -31,11 +33,13 @@ const AlHasanMasjid = () => {
     const prayersSnapshot = await getDocs(prayersCollection);
     const prayersList = prayersSnapshot.docs.map((doc) => ({
       id: doc.id,
-      time: doc.data().time, // Assuming 'time' exists in Firestore documents
+      time: doc.data().time,
+      name: doc.data().name, // Make sure 'name' is fetched from Firestore
       ...doc.data(),
     }));
     setPrayers(prayersList);
   };
+
 
   // Fetch announcement from Firestore
   const fetchAnnouncement = async () => {
