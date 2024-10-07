@@ -16,6 +16,7 @@ interface Prayer {
   name: string; // Add this line if 'name' exists in your Firestore documents
 }
 
+const prayerOrder = ["Fajr", "Zuhr", "Asr", "Maghrib", "Isha"];
 
 const AlHasanMasjid = () => {
   const [prayers, setPrayers] = useState<Prayer[]>([]);
@@ -37,6 +38,8 @@ const AlHasanMasjid = () => {
       name: doc.data().name, // Make sure 'name' is fetched from Firestore
       ...doc.data(),
     }));
+    // Sort prayers based on the defined order
+    prayersList.sort((a, b) => prayerOrder.indexOf(a.name) - prayerOrder.indexOf(b.name));
     setPrayers(prayersList);
   };
 
