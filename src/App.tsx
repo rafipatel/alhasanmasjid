@@ -21,7 +21,20 @@ const AlHasanMasjid = () => {
   const [changesMade, setChangesMade] = useState(false);
   const [showSaveMessage, setShowSaveMessage] = useState(false);
 
-  // Fetch prayers from Firestore
+  // // Fetch prayers from Firestore
+  // const fetchPrayers = async () => {
+  //   const prayersCollection = collection(db, "prayers");
+  //   const prayersSnapshot = await getDocs(prayersCollection);
+  //   const prayersList = prayersSnapshot.docs.map((doc) => ({
+  //     id: doc.id,
+  //     time: doc.data().time, // add this line
+  //     ...doc.data(),
+  //   }));
+  //   setPrayers(prayersList);
+  // };
+
+
+    // Fetch prayers from Firestore
   const fetchPrayers = async () => {
     const prayersCollection = collection(db, "prayers");
     const prayersSnapshot = await getDocs(prayersCollection);
