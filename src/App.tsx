@@ -10,7 +10,7 @@ import {
 } from "firebase/firestore";
 
 const AlHasanMasjid = () => {
-  const [prayers, setPrayers] = useState([]);
+  const [prayers, setPrayers] = useState<{ id: string; }[]>([]);
   const [activeTab, setActiveTab] = useState("prayer-times");
   const [isAdmin, setIsAdmin] = useState(false);
   const [password, setPassword] = useState("");
