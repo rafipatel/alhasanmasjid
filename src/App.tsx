@@ -168,7 +168,7 @@ const AlHasanMasjid = () => {
   }, [changesMade]);
 
   const handleAdminLogin = () => {
-    if (password === "admin123") {
+    if (password === "alhasan123") {
       setIsAdmin(true);
       setIncorrectPassword(false);
     } else {
