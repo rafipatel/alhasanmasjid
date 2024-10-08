@@ -27,7 +27,7 @@ body {
 
 /* Headings */
 h1 {
-  font-size: 5rem; /* Increase heading size for emphasis */
+  font-size: 10rem; /* Increase heading size for emphasis */
   color: #006699; /* Use a soothing color to match theme */
   margin-bottom: 20px;
   font-weight: 700;
