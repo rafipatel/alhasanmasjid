@@ -16,7 +16,7 @@ interface Prayer {
   name: string; // Add this line if 'name' exists in your Firestore documents
 }
 
-const prayerOrder = ["Fajr", "Zuhr", "Asr", "Maghrib", "Isha"];
+const prayerOrder = ["Fajr", "Zuhr", "Asr", "Maghrib", "Isha","Jumma"];
 
 
 // Translation dictionary
