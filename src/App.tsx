@@ -173,19 +173,17 @@ const AlHasanMasjid = () => {
           <h2 className="text-3xl font-bold text-green-700 mb-2">
             Prayer Times
           </h2>
-          <ul>
-            {prayers.map((prayer) => (
-              <li
-                key={prayer.id}
-                className="flex justify-between p-2 border-b border-gray-200"
-              >
-                <span className="text-lg font-bold text-blue-600">
-                  {prayer.name}
-                </span>
-                <span className="text-lg">{prayer.time}</span>
-              </li>
-            ))}
-          </ul>
+          <ul className="prayer-times">
+          {prayers.map((prayer) => (
+            <li key={prayer.id}>
+              
+              {/* Added className "prayer-name" for name */}
+              <span className="prayer-name">{prayer.name}</span> 
+              
+              {/* Added className "prayer-time" for time */}
+              <span className="prayer-time">{prayer.time}</span>
+          </li>
+        ))}
           <h3 className="text-2xl font-bold text-green-600 mb-2">
             Announcements
           </h3>
