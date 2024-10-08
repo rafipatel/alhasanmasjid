@@ -18,6 +18,52 @@ interface Prayer {
 
 const prayerOrder = ["Fajr", "Zuhr", "Asr", "Maghrib", "Isha"];
 
+
+// Translation dictionary
+const translations = {
+  title: {
+    en: "Al Hasan Masjid",
+    ur: "ال حسن مسجد",
+  },
+  prayerTimes: {
+    en: "Prayer Times",
+    ur: "نماز کے اوقات",
+  },
+  announcements: {
+    en: "Announcements",
+    ur: "اعلانات",
+  },
+  donate: {
+    en: "Donate",
+    ur: "مسجد کا چندہ",
+  },
+  donateButton: {
+    en: "Donate Now",
+    ur: "اب عطیہ کریں",
+  },
+  adminPanel: {
+    en: "Admin Panel",
+    ur: "ایڈمن پینل",
+  },
+  incorrectPassword: {
+    en: "Incorrect password!",
+    ur: "غلط پاس ورڈ!",
+  },
+  saveChanges: {
+    en: "Save Changes",
+    ur: "تبدیلیاں محفوظ کریں",
+  },
+  savedMessage: {
+    en: "Changes saved!",
+    ur: "تبدیلیاں محفوظ کر لی گئیں!",
+  },
+  adminLogin: {
+    en: "Admin Login",
+    ur: "ایڈمن لاگ ان",
+  },
+};
+
+
 const AlHasanMasjid = () => {
   const [prayers, setPrayers] = useState<Prayer[]>([]);
   const [activeTab, setActiveTab] = useState("prayer-times");
@@ -132,20 +178,20 @@ const AlHasanMasjid = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-4 md:p-6 lg:p-8 bg-white rounded shadow-md bg-opacity-80 backdrop-filter backdrop-blur-md">
-      <h1 className="text-4xl font-bold text-green-700 mb-4 text-center">
-        Al Hasan Masjid
+      <h1 className="text-4xl font-bold text-green-700 mb-6 text-center">
+      {translations.title.en} <br /> {translations.title.ur}
       </h1>
-      <div className="flex flex-wrap justify-center mb-4">
+      <div className="flex flex-wrap justify-center mb-6">
         {/* Tab Buttons */}
         <button
           className={`text-lg font-bold p-3 rounded m-1 transition-all duration-300 ${
             activeTab === "prayer-times"
-              ? "bg-blue-500 text-white shadow-lg"
+              ? "bg-blue-100 text-white shadow-lg"
               : "bg-gray-200 text-gray-600 hover:bg-blue-300"
           }`}
           onClick={() => setActiveTab("prayer-times")}
         >
-          Prayer Times
+          {translations.prayerTimes.en} <br /> {translations.prayerTimes.ur}
         </button>
         <button
           className={`text-lg font-bold p-3 rounded m-1 transition-all duration-300 ${
@@ -155,7 +201,7 @@ const AlHasanMasjid = () => {
           }`}
           onClick={() => setActiveTab("donate")}
         >
-          Donate
+          {translations.donate.en} <br /> {translations.donate.ur}
         </button>
         <button
           className={`text-lg font-bold p-3 rounded m-1 transition-all duration-300 ${
@@ -165,14 +211,13 @@ const AlHasanMasjid = () => {
           }`}
           onClick={() => setActiveTab("admin")}
         >
-          Admin
+          {translations.adminPanel.en} <br /> {translations.adminPanel.ur}
         </button>
       </div>
       {activeTab === "prayer-times" && (
-        <div className="mb-4">
-          <h2 className="text-3xl font-bold text-green-700 mb-2">
-            Prayer Times
-          </h2>
+  <div className="mb-4">
+    {/* Added className "prayer-times-heading" */}
+    <h2 className="prayer-times-heading">{translations.prayerTimes.en} {translations.prayerTimes.ur}</h2>
           <ul className="prayer-times">
           {prayers.map((prayer) => (
             <li key={prayer.id}>
@@ -185,22 +230,30 @@ const AlHasanMasjid = () => {
           </li>
         ))}
           </ul>
-          <h3 className="text-2xl font-bold text-green-600 mb-2">
-            Announcements
-          </h3>
-          <textarea
-            value={announcement}
-            onChange={(e) => handleAnnouncementChange(e.target.value)}
-            className="text-lg p-2 border border-gray-200 w-full h-24"
-          />
+                      {/* Updated the className for Announcements heading */}
+    <h3 className="announcements-heading">{translations.announcements.en} <br /> {translations.announcements.ur}</h3>
+
+          {isAdmin ? (
+            <textarea
+              value={announcement}
+              onChange={(e) => handleAnnouncementChange(e.target.value)}
+              className="text-lg p-2 border border-gray-300 rounded-lg w-full h-24 bg-gray-100 shadow-inner"
+            />
+          ) : (
+            <textarea
+              value={announcement}
+              readOnly
+              className="text-lg p-2 border border-gray-300 rounded-lg w-full h-24 bg-gray-100 shadow-inner"
+            />
+          )}
         </div>
       )}
       {activeTab === "donate" && (
-        <div className="mb-4">
+        <div className="mb-6">
           <h2 className="text-3xl font-bold text-green-700 mb-2">
             Donate to Al Hasan Masjid
           </h2>
-          <p className="text-lg text-gray-800">
+          <p className="text-lg text-gray-800 mb-4">
             Please consider donating to support our community.
           </p>
           <button className="text-lg font-bold p-3 rounded bg-blue-500 text-white shadow-md hover:bg-blue-600">
@@ -216,7 +269,7 @@ const AlHasanMasjid = () => {
                 Admin Panel
               </h2>
               <h3 className="text-2xl font-bold text-blue-600 mb-2">
-                Prayer Times
+              {translations.prayerTimes.en}<br></br>{translations.prayerTimes.ur}
               </h3>
               <ul>
                 {prayers.map((prayer) => (
@@ -224,25 +277,25 @@ const AlHasanMasjid = () => {
                     key={prayer.id}
                     className="flex justify-between p-2 border-b border-gray-200"
                   >
-                    <span className="text-lg font-bold">{prayer.name}</span>
+                    <span className="text-2xl font-bold admin-input">{prayer.name}</span>
                     <input
-                      type="text"
-                      value={prayer.time}
-                      onChange={(e) => {
-                        const newTime = e.target.value;
-                        const newPrayers = prayers.map((p) =>
-                          p.id === prayer.id ? { ...p, time: newTime } : p
-                        );
-                        setPrayers(newPrayers);
-                        setChangesMade(true);
-                      }}
-                      className="text-lg p-2 border border-gray-200"
-                    />
+                    type="text"
+                    value={prayer.time}
+                    onChange={(e) => {
+                      const newTime = e.target.value;
+                      const newPrayers = prayers.map((p) =>
+                        p.id === prayer.id ? { ...p, time: newTime } : p
+                      );
+                      setPrayers(newPrayers);
+                      setChangesMade(true);
+                    }}
+                    className="text-lg p-2 border border-gray-200 admin-input"
+                  />
                   </li>
                 ))}
               </ul>
               <h3 className="text-2xl font-bold text-green-600 mb-2">
-                Announcement
+                {translations.announcements.en}<br></br>{translations.announcements.ur}
               </h3>
               <textarea
                 value={announcement}
@@ -256,13 +309,11 @@ const AlHasanMasjid = () => {
                 Save Changes
               </button>
               {showSaveMessage && (
-                <p className="text-green-600 mt-2">
-                  Changes saved successfully!
-                </p>
+                <p className="text-green-600 mt-2">Changes saved!</p>
               )}
             </div>
           ) : (
-            <div>
+            <div className="admin-login"> {/* Added className here */}
               <h2 className="text-3xl font-bold text-green-700 mb-2">
                 Admin Login
               </h2>
