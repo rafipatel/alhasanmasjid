@@ -1,22 +1,124 @@
+/* Body and Background */
 body {
-  background-image: url("https://thumbs.dreamstime.com/z/blank-islamic-background-mosque-design-92752630.jpg"); /* Replace with an appropriate background image URL */
+  background-image: url("https://thumbs.dreamstime.com/z/blank-islamic-background-mosque-design-92752630.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Times', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 150vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  color: #334; /* Slightly darker color for better contrast */
 }
 
+/* Main Container */
+.main-content {
+  max-width: 900px;
+  width: 100%; /* Make sure it doesn't overflow on smaller screens */
+  background-color: rgba(255, 255, 255, 0.8); /* Translucent background */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  text-align: center;
+}
+
+/* Headings */
+h1 {
+  font-size: 5rem; /* Increase heading size for emphasis */
+  color: #006699; /* Use a soothing color to match theme */
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Textarea Styling */
 textarea {
-  resize: none;
+  width: 100%;
+  height: 80px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  font-size: 1rem;
 }
 
+/* Buttons */
 button {
+  background-color: #006699;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
   transform: scale(1.05);
+  background-color: #00507a;
 }
-h1 {
-  font-size: 1.5rem;
+
+/* Prayer Times Section */
+.prayer-times {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.prayer-times li {
+  margin-left: 10rem;
+  background-color: #030304; /* Light color for prayer times */
+  padding: 15px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #006699; /* Matching border for style */
+}
+
+
+
+/* Announcements Section */
+.announcements h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #00507a;
+}
+
+.announcements textarea {
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px;
+    margin: 30px auto;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+  .prayer-times li {
+    font-size: 10rem;
+    padding: 10px;
+  }
 }
