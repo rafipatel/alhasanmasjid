@@ -184,6 +184,7 @@ const AlHasanMasjid = () => {
               <span className="prayer-time">{prayer.time}</span>
           </li>
         ))}
+          </ul>
           <h3 className="text-2xl font-bold text-green-600 mb-2">
             Announcements
           </h3>
