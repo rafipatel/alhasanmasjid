@@ -61,7 +61,6 @@ button:hover {
   transform: scale(1.05);
   background-color: #00507a;
 }
-
 /* Prayer Times Section */
 .prayer-times {
   list-style: none;
@@ -74,7 +73,7 @@ button:hover {
   background-color: #030304; /* Light color for prayer times */
   padding: 15px;
   margin-bottom: 10px;
-  font-size: 1.2rem;
+  font-size: 1.4rem; /* Increased overall font size */
   border-radius: 6px;
   display: flex;
   gap: 20px;
@@ -84,7 +83,18 @@ button:hover {
   border-left: 5px solid #006699; /* Matching border for style */
 }
 
+/* Increase font size for prayer name and time specifically */
+.prayer-times li .prayer-name {
+  font-size: 1.8rem; /* Increased font size for prayer name */
+  font-weight: bold;
+  color: #00aaff;
+}
 
+.prayer-times li .prayer-time {
+  font-size: 1.6rem; /* Increased font size for prayer time */
+  font-weight: bold;
+  color: #ffffff;
+}
 
 /* Announcements Section */
 .announcements h2 {
