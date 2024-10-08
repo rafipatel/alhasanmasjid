@@ -7,7 +7,7 @@ body {
   font-family: 'Times', sans-serif;
   margin: 0;
   padding: 0;
-  height: 150vh; /* Full viewport height */
+  height: 170vh; /* Full viewport height */
   display: flex;
   justify-content: center;
   align-items: center; /* Center vertically */
@@ -31,6 +31,7 @@ h1 {
   color: #006699; /* Use a soothing color to match theme */
   margin-bottom: 20px;
   font-weight: 700;
+  text-align: center;
 }
 
 /* Textarea Styling */
@@ -50,11 +51,12 @@ button {
   background-color: #006699;
   color: white;
   padding: 10px 20px;
-  font-size: 1rem;
+  font-size: 2rem;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
+  margin: 10px;
 }
 
 button:hover {
@@ -67,10 +69,16 @@ button:hover {
   padding: 0;
   margin: 0;
 }
-
+/* Heading for Prayer Times */
+h2.prayer-times-heading {
+  font-size: 3.5rem; /* Increased font size for "Prayer Times" */
+  font-weight: bold;
+  color: #006699; /* Soothing color to match theme */
+  margin-bottom: 20px;
+}
 .prayer-times li {
-  margin-left: 10rem;
-  background-color: #030304; /* Light color for prayer times */
+  margin-left: 2rem;
+  background-color: #eff2ef95; /* Light color for prayer times */
   padding: 15px;
   margin-bottom: 10px;
   font-size: 1.4rem; /* Increased overall font size */
@@ -80,32 +88,42 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  border-left: 5px solid #006699; /* Matching border for style */
+  border-left: 5px solid #0c0c0c; /* Matching border for style */
 }
 
 /* Increase font size for prayer name and time specifically */
 .prayer-times li .prayer-name {
-  font-size: 1.8rem; /* Increased font size for prayer name */
+  font-size: 1.9rem; /* Increased font size for prayer name */
   font-weight: bold;
-  color: #00aaff;
+  color: #101010;
+  text-align: center;
 }
 
 .prayer-times li .prayer-time {
   font-size: 1.6rem; /* Increased font size for prayer time */
   font-weight: bold;
-  color: #ffffff;
+  color: #101110;
+  text-align: center;
+  margin-right: 3rem;
 }
 
 /* Announcements Section */
 .announcements h2 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   margin-bottom: 10px;
   color: #00507a;
 }
 
+h3.announcements-heading {
+  font-size: 2.5rem; /* Increased font size for Announcements heading */
+  color:#006699;
+  margin-bottom: 15px;
+  text-align: left; /* Adjust alignment if needed */
+}
 .announcements textarea {
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Footer */
 footer {
@@ -131,4 +149,58 @@ footer {
     font-size: 10rem;
     padding: 10px;
   }
+}
+
+
+/* Admin Login Container Styling */
+.admin-login {
+  width: 100%; /* Ensure it takes full width */
+  max-width: 500px; /* Increased width for a larger login box */
+  margin: 0 auto; /* Centered */
+  padding: 20px; /* Add some padding for spacing */
+  background-color: rgba(255, 255, 255, 0.9); /* Optional background */
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Admin Login Input Field */
+.admin-login input {
+  width: 100%; /* Full width for the input */
+  padding: 15px; /* Increased padding */
+  font-size: 1.2rem; /* Increased font size */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Admin Login Button */
+.admin-login button {
+  width: 100%; /* Full width button */
+  padding: 20px; /* Increased padding */
+  font-size: 1.2rem; /* Increased font size */
+  background-color: #006699;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.admin-login button:hover {
+  background-color: #00507a;
+  transform: scale(1.05);
+}
+
+/* styles.css */
+
+textarea {
+  font-size: 1.125rem; /* Increase textarea font size */
+}
+
+input[type="text"] {
+  font-size: 1rem; /* Ensure input fields are large */
+}
+
+.admin-input {
+  width: 100px; /* Adjust the width as needed */
 }
