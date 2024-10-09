@@ -222,7 +222,7 @@ const AlHasanMasjid = () => {
       {activeTab === "prayer-times" && (
   <div className="mb-4">
     {/* Added className "prayer-times-heading" */}
-    <h2 className="prayer-times-heading">{translations.prayerTimes.en} {translations.prayerTimes.ur}</h2>
+    <h2 className="prayer-times-heading">{translations.jamatTimes.en}<br></br>{translations.jamatTimes.ur}</h2>
           <ul className="prayer-times">
           {prayers.map((prayer) => (
             <li key={prayer.id}>
@@ -236,7 +236,7 @@ const AlHasanMasjid = () => {
         ))}
           </ul>
                       {/* Updated the className for Announcements heading */}
-    <h3 className="announcements-heading">{translations.announcements.en} <br /> {translations.announcements.ur}</h3>
+    <h3 className="announcements-heading">{translations.announcements.en} <br></br> {translations.announcements.ur}</h3>
 
           {isAdmin ? (
             <textarea
