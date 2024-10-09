@@ -20,7 +20,6 @@ interface Prayer {
 const prayerOrder = ["Fajr (فجر)","Zuhr (ظہور)","Asr (عصر)","Maghrib (مغرب)","Isha (عشاء)","Jumma (جمعہ)"]
 
 
-
 // Translation dictionary
 const translations = {
   title: {
@@ -33,7 +32,7 @@ const translations = {
   },
   announcements: {
     en: "Announcements",
-    ur: "اعلانات",
+    ur: "(اعلانات)",
   },
   donate: {
     en: "Donate",
@@ -63,6 +62,10 @@ const translations = {
     en: "Admin Login",
     ur: "ایڈمن لاگ ان",
   },
+  jamatTimes :{
+    en: "Jamat Times",
+    ur: "(جماعت کے اوقات)"
+  }
 };
 
 
