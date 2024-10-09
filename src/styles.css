@@ -1,13 +1,13 @@
 /* Body and Background */
 body {
-  background-image: url("https://img.freepik.com/premium-photo/islamic-background-with-empty-copy-space-good-special-event-like-ramadan-eid-al-fitr_800563-1766.jpg");
-  background-size: 3;
+  background-image: url("https://marketplace.canva.com/EAGBUQRUZEM/1/0/900w/canva-blue-watercolor-mosque-and-lantern-background-instagram-story-nHFoKk3I3o4.jpg");
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   font-family: 'Times', sans-serif;
   margin: 0;
   padding: 0;
-  height: 170vh; /* Full viewport height */
+  height: 150vh; /* Full viewport height */
   display: flex;
   justify-content: center;
   align-items: center; /* Center vertically */
@@ -78,7 +78,7 @@ h2.prayer-times-heading {
 }
 .prayer-times li {
   margin-left: 2rem;
-  margin-right: 10rem;
+  margin-right: 5rem;
   background-color: #eff2ef95; /* Light color for prayer times */
   padding: 15px;
   margin-bottom: 10px;
