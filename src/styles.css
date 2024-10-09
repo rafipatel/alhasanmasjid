@@ -1,13 +1,13 @@
 /* Body and Background */
 body {
   background-image: url("https://marketplace.canva.com/EAGBUQRUZEM/1/0/900w/canva-blue-watercolor-mosque-and-lantern-background-instagram-story-nHFoKk3I3o4.jpg");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   font-family: 'Times', sans-serif;
   margin: 0;
   padding: 0;
-  height: 150vh; /* Full viewport height */
+  height: 170vh; /* Full viewport height */
   display: flex;
   justify-content: center;
   align-items: center; /* Center vertically */
@@ -27,10 +27,10 @@ body {
 
 /* Headings */
 h1 {
-  font-size: 4rem; /* Increase heading size for emphasis */
+  font-size: 6rem; /* Increase heading size for emphasis */
   color: #006699; /* Use a soothing color to match theme */
   margin-bottom: 20px;
-  font-weight: 700;
+  font-weight: 800;
   text-align: center;
 }
 
@@ -71,14 +71,15 @@ button:hover {
 }
 /* Heading for Prayer Times */
 h2.prayer-times-heading {
-  font-size: 3.5rem; /* Increased font size for "Prayer Times" */
+  font-size: 2rem; /* Increased font size for "Prayer Times" */
   font-weight: bold;
   color: #006699; /* Soothing color to match theme */
   margin-bottom: 20px;
+  text-align: center;
 }
 .prayer-times li {
   margin-left: 2rem;
-  margin-right: 5rem;
+  margin-right: 1rem;
   background-color: #eff2ef95; /* Light color for prayer times */
   padding: 15px;
   margin-bottom: 10px;
@@ -116,10 +117,10 @@ h2.prayer-times-heading {
 }
 
 h3.announcements-heading {
-  font-size: 2.5rem; /* Increased font size for Announcements heading */
+  font-size: 1.6rem; /* Increased font size for Announcements heading */
   color:#006699;
   margin-bottom: 15px;
-  text-align: left; /* Adjust alignment if needed */
+  text-align: center; /* Adjust alignment if needed */
 }
 .announcements textarea {
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
