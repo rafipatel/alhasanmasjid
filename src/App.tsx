@@ -17,7 +17,7 @@ interface Prayer {
 }
 
 // const prayerOrder = ["Fajr", "Zuhr", "Asr", "Maghrib", "Isha","Jumma"];
-const prayerOrder = ["Fajr (فجر)","Zuhr (ظہور)","Asr (عصر)","Maghrib (مغرب)","Isha (عشاء)","Jumma (جمعہ)"]
+const prayerOrder = ["Fajr (فجر)","Zuhr (ظہور)","Asr (عصر)","Magrib (مغرب)","Isha (عشاء)","Jumma (جمعہ)"]
 
 
 // Translation dictionary
