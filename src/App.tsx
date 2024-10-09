@@ -24,11 +24,11 @@ const prayerOrder = ["Fajr (فجر)","Zuhr (ظہور)","Asr (عصر)","Maghrib (
 const translations = {
   title: {
     en: "Al Hasan Masjid",
-    ur: "ال حسن مسجد",
+    ur: "(ال حسن مسجد)",
   },
   prayerTimes: {
     en: "Prayer Times",
-    ur: "نماز کے اوقات",
+    ur: "(نماز کے اوقات)",
   },
   announcements: {
     en: "Announcements",
@@ -36,31 +36,31 @@ const translations = {
   },
   donate: {
     en: "Donate",
-    ur: "مسجد کا چندہ",
+    ur: "(مسجد کا چندہ)",
   },
   donateButton: {
     en: "Donate Now",
-    ur: "اب عطیہ کریں",
+    ur: "(اب عطیہ کریں)",
   },
   adminPanel: {
     en: "Admin Panel",
-    ur: "ایڈمن پینل",
+    ur: "(ایڈمن پینل)",
   },
   incorrectPassword: {
     en: "Incorrect password!",
-    ur: "غلط پاس ورڈ!",
+    ur: "(غلط پاس ورڈ!)",
   },
   saveChanges: {
     en: "Save Changes",
-    ur: "تبدیلیاں محفوظ کریں",
+    ur: "(تبدیلیاں محفوظ کریں)",
   },
   savedMessage: {
     en: "Changes saved!",
-    ur: "تبدیلیاں محفوظ کر لی گئیں!",
+    ur: "(تبدیلیاں محفوظ کر لی گئیں!)",
   },
   adminLogin: {
     en: "Admin Login",
-    ur: "ایڈمن لاگ ان",
+    ur: "(ایڈمن لاگ ان)",
   },
   jamatTimes :{
     en: "Jamat Times",
